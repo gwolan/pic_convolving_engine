@@ -15,6 +15,7 @@ set(CMAKE_CXX_FLAGS "-O2 -Wall")
 #######################################################
 set(SOURCE_DIRECTORIES
         Miscellanous/
+        STBlib/
    )
 
 
