@@ -4,8 +4,7 @@
 
 int main(int argc, char* argv[])
 {
-    FilterConfig filterConfig;
-    ArgParser argParser(static_cast<uint32_t>(argc), argv, filterConfig);
+    ArgParser argParser(static_cast<uint32_t>(argc), argv);
 
     if(argParser.validateArgs())
     {

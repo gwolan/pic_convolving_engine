@@ -1,12 +1,7 @@
-#include <vector>
 #include <string>
 
-
-class FilterConfig
+namespace FilterConfig
 {
-    public:
-    FilterConfig();
-
     enum FileFormat
     {
         UNKNOWN_FORMAT = 0,
@@ -20,13 +15,31 @@ class FilterConfig
         BLUR
     };
 
-    const std::vector<FileFormat>& getSupportedFileFormats() const;
-    const std::vector<FilterEffect>& getSupportedFilterEffects() const;
-    FileFormat convertFileFormatToEnum(const std::string& fileFormatStr);
-    FilterEffect convertFilterEffectToEnum(const std::string& filterEffectStr);
+    inline FileFormat convertFileFormatToEnum(const std::string& fileFormatStr)
+    {
+        if(fileFormatStr == "jpeg")
+        {
+            return JPEG;
+        }
+        else if(fileFormatStr == "png")
+        {
+            return PNG;
+        }
+        else
+        {
+            return UNKNOWN_FORMAT;
+        }
+    }
 
-
-    private:
-    std::vector<FileFormat> _supportedFileFormats;
-    std::vector<FilterEffect> _supportedFilterEffects;
-};
+    inline FilterEffect convertFilterEffectToEnum(const std::string& filterEffectStr)
+    {
+        if(filterEffectStr == "BLUR")
+        {
+            return BLUR;
+        }
+        else
+        {
+            return UNKNOWN_EFFECT;
+        }
+    }
+}

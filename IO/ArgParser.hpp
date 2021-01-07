@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cstdint>
 #include <string>
 #include <boost/program_options.hpp>
@@ -7,7 +9,7 @@
 class ArgParser
 {
     public:
-    ArgParser(uint32_t argc, char* argv[], FilterConfig& filterConfig);
+    ArgParser(uint32_t argc, char* argv[]);
 
     void printHelp();
     void printMsg(const std::string& msg);
@@ -22,8 +24,6 @@ class ArgParser
 
     boost::program_options::options_description _help;
     boost::program_options::variables_map _inputMap;
-    FilterConfig& _filterConfig;
-    std::string _errorMsg;
 
     std::string _filePath;
     FilterConfig::FileFormat _fileFormat;
