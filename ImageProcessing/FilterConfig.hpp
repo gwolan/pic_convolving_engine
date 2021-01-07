@@ -1,4 +1,7 @@
+#pragma once
+
 #include <string>
+
 
 namespace FilterConfig
 {
@@ -6,7 +9,9 @@ namespace FilterConfig
     {
         UNKNOWN_FORMAT = 0,
         JPEG,
-        PNG
+        PNG,
+        BMP,
+        TGA
     };
 
     enum FilterEffect
@@ -24,6 +29,14 @@ namespace FilterConfig
         else if(fileFormatStr == "png")
         {
             return PNG;
+        }
+        else if(fileFormatStr == "bmp")
+        {
+            return BMP;
+        }
+        else if(fileFormatStr == "tga")
+        {
+            return TGA;
         }
         else
         {
