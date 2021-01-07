@@ -17,6 +17,5 @@ Part of the 'pic_convolving_website' project: https://github.com/gwolan/pic_conv
 
 
 ERROR RETURN CODES:
-* 1 = invalid arguments
-* 2 = unable to load image
-* 3 - unable to save image
+* 1 = unable to load image
+* 2 = unable to save image

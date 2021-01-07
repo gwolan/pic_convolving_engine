@@ -4,9 +4,8 @@
 
 
 // ERROR RETURN CODES:
-// 1 = invalid arguments
-// 2 = unable to load image
-// 3 - unable to save image
+// 1 = unable to load image
+// 2 - unable to save image
 
 
 int main(int argc, char* argv[])
@@ -29,20 +28,15 @@ int main(int argc, char* argv[])
             if(not image.saveImage())
             {
                 std::cout << "ERROR: Unable to save image." << std::endl;
-                return 3;
+                return 2;
             }
         }
         else
         {
             std::cout << "ERROR: Unable to load image." << std::endl;
-            return 2;
+            return 1;
         }
     }
-    else
-    {
-        return 1;
-    }
-    
 
     return 0;
 }
