@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <ImageProcessing/FilterCoefficients.hpp>
 
 
 namespace FilterConfig
@@ -20,39 +21,6 @@ namespace FilterConfig
         BLUR
     };
 
-    inline FileFormat convertFileFormatToEnum(const std::string& fileFormatStr)
-    {
-        if(fileFormatStr == "jpeg")
-        {
-            return JPEG;
-        }
-        else if(fileFormatStr == "png")
-        {
-            return PNG;
-        }
-        else if(fileFormatStr == "bmp")
-        {
-            return BMP;
-        }
-        else if(fileFormatStr == "tga")
-        {
-            return TGA;
-        }
-        else
-        {
-            return UNKNOWN_FORMAT;
-        }
-    }
-
-    inline FilterEffect convertFilterEffectToEnum(const std::string& filterEffectStr)
-    {
-        if(filterEffectStr == "BLUR")
-        {
-            return BLUR;
-        }
-        else
-        {
-            return UNKNOWN_EFFECT;
-        }
-    }
+    FileFormat convertFileFormatToEnum(const std::string& fileFormatStr);
+    FilterEffect convertFilterEffectToEnum(const std::string& filterEffectStr);
 }

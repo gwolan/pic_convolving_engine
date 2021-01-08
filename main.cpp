@@ -14,11 +14,6 @@ int main(int argc, char* argv[])
 
     if(argParser.validateArgs())
     {
-        std::cout << "Success!" << std::endl;
-        std::cout << "Path: " << argParser.getImagePath() << std::endl;
-        std::cout << "Format: " << argParser.getImageFormat() << std::endl;
-        std::cout << "Effect: " << argParser.getRequestedEffect() << std::endl;
-
         Image image(argParser.getImagePath(), argParser.getImageFormat());
 
         if(image.isImageLoaded())
