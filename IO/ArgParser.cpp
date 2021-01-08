@@ -16,7 +16,9 @@ ArgParser::ArgParser(uint32_t argc, char* argv[])
         ("format,f", boost::program_options::value<std::string>(), "image format\n\n"
                                                                    "Supported formats:\n"
                                                                    "- jpeg\n"
-                                                                   "- png\n")
+                                                                   "- png\n"
+                                                                   "- bmp\n"
+                                                                   "- tga\n")
         ("effect,e", boost::program_options::value<std::string>()->default_value("BLUR"), "requested effect (optional)\n\n"
                                                                                           "Supported effects:\n"
                                                                                           "- BLUR (default)");

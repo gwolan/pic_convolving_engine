@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include <ImageProcessing/FilterCoefficients.hpp>
 
 
 namespace FilterConfig
@@ -18,7 +17,10 @@ namespace FilterConfig
     enum FilterEffect
     {
         UNKNOWN_EFFECT = 0,
-        BLUR
+        BLUR,
+        MOTION_BLUR,
+        EDGE_DETECTION,
+        SHARPEN
     };
 
     FileFormat convertFileFormatToEnum(const std::string& fileFormatStr);
