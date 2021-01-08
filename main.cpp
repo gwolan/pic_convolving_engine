@@ -1,6 +1,7 @@
 #include <iostream>
 #include <IO/ArgParser.hpp>
 #include <ImageProcessing/Image.hpp>
+#include <ImageProcessing/Filter.hpp>
 
 
 // ERROR RETURN CODES:
@@ -15,10 +16,11 @@ int main(int argc, char* argv[])
     if(argParser.validateArgs())
     {
         Image image(argParser.getImagePath(), argParser.getImageFormat());
+        Filter filter(argParser.getRequestedEffect());
 
         if(image.isImageLoaded())
         {
-            // convolve
+            filter.convolve(image);
 
             if(not image.saveImage())
             {
