@@ -51,4 +51,42 @@ namespace FilterConfig
             return UNKNOWN_EFFECT;
         }
     }
+
+    void getFilterConfig(FilterEffect effect, const int32_t*& width,
+                                              const int32_t*& height, const double*& filterBias,
+                                                                      const double*& filterFactor, const std::vector<std::vector<double>>*& filterCoeffs)
+    {
+        if(effect == BLUR)
+        {
+            width = &FilterConfig::BlurCoefficients::coefficientsWidth;
+            height = &FilterConfig::BlurCoefficients::coefficientsHeight;
+            filterCoeffs = &FilterConfig::BlurCoefficients::coefficients;
+            filterFactor = &FilterConfig::BlurCoefficients::factor;
+            filterBias = &FilterConfig::BlurCoefficients::bias;
+        }
+        else if(effect == MOTION_BLUR)
+        {
+            width = &FilterConfig::MotionBlurCoefficients::coefficientsWidth;
+            height = &FilterConfig::MotionBlurCoefficients::coefficientsHeight;
+            filterCoeffs = &FilterConfig::MotionBlurCoefficients::coefficients;
+            filterFactor = &FilterConfig::MotionBlurCoefficients::factor;
+            filterBias = &FilterConfig::MotionBlurCoefficients::bias;
+        }
+        else if(effect == EDGE_DETECTION)
+        {
+            width = &FilterConfig::EdgeDetectionCoefficients::coefficientsWidth;
+            height = &FilterConfig::EdgeDetectionCoefficients::coefficientsHeight;
+            filterCoeffs = &FilterConfig::EdgeDetectionCoefficients::coefficients;
+            filterFactor = &FilterConfig::EdgeDetectionCoefficients::factor;
+            filterBias = &FilterConfig::EdgeDetectionCoefficients::bias;
+        }
+        else if(effect == SHARPEN)
+        {
+            width = &FilterConfig::SharpenCoefficients::coefficientsWidth;
+            height = &FilterConfig::SharpenCoefficients::coefficientsHeight;
+            filterCoeffs = &FilterConfig::SharpenCoefficients::coefficients;
+            filterFactor = &FilterConfig::SharpenCoefficients::factor;
+            filterBias = &FilterConfig::SharpenCoefficients::bias;
+        }
+    }
 }

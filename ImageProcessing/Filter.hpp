@@ -1,6 +1,5 @@
 #pragma once
 
-#include <ImageProcessing/FilterConfig.hpp>
 #include <ImageProcessing/Image.hpp>
 
 
@@ -13,7 +12,6 @@ class Filter
 
 
     private:
-    const FilterConfig::FilterEffect _effectType;
     const int32_t* _coefficientsWidth;
     const int32_t* _coefficientsHeight;
     const double* _bias;

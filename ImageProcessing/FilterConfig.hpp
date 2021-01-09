@@ -74,4 +74,7 @@ namespace FilterConfig
 
     FileFormat convertFileFormatToEnum(const std::string& fileFormatStr);
     FilterEffect convertFilterEffectToEnum(const std::string& filterEffectStr);
+    void getFilterConfig(FilterEffect effect, const int32_t*& width,
+                                              const int32_t*& height, const double*& filterBias,
+                                                                      const double*& filterFactor, const std::vector<std::vector<double>>*& filterCoeffs);
 }
