@@ -72,8 +72,12 @@ namespace FilterConfig
         SHARPEN
     };
 
-    FileFormat convertFileFormatToEnum(const std::string& fileFormatStr);
-    FilterEffect convertFilterEffectToEnum(const std::string& filterEffectStr);
+    FileFormat convertFileFormatStrToEnum(const std::string& fileFormatStr);
+    FilterEffect convertFilterEffectStrToEnum(const std::string& filterEffectStr);
+
+    std::string convertFileFormatEnumToStr(const FileFormat fileFormatEnum);
+    std::string convertFilterEffectEnumToStr(const FilterEffect filterEffectEnum);
+
     void getFilterConfig(FilterEffect effect, const int32_t*& width,
                                               const int32_t*& height, const double*& filterBias,
                                                                       const double*& filterFactor, const std::vector<std::vector<double>>*& filterCoeffs);

@@ -38,12 +38,12 @@ void ArgParser::parseArgs(uint32_t argc, char* argv[])
 
     if(_inputMap.count("format"))
     {
-        _fileFormat = FilterConfig::convertFileFormatToEnum(_inputMap["format"].as<std::string>());
+        _fileFormat = FilterConfig::convertFileFormatStrToEnum(_inputMap["format"].as<std::string>());
     }
 
     if(_inputMap.count("effect"))
     {
-        _filterEffect = FilterConfig::convertFilterEffectToEnum(_inputMap["effect"].as<std::string>());
+        _filterEffect = FilterConfig::convertFilterEffectStrToEnum(_inputMap["effect"].as<std::string>());
     }
 }
 
