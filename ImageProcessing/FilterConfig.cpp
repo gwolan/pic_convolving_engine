@@ -19,6 +19,7 @@ namespace FilterConfig
         else if(filterEffectStr == "MOTION_BLUR")    return MOTION_BLUR;
         else if(filterEffectStr == "EDGE_DETECTION") return EDGE_DETECTION;
         else if(filterEffectStr == "SHARPEN")        return SHARPEN;
+        else if(filterEffectStr == "EMBOSS")         return EMBOSS;
         else                                         return UNKNOWN_EFFECT;
     }
 
@@ -49,6 +50,8 @@ namespace FilterConfig
             case EDGE_DETECTION: return "EDGE_DETECTION";
 
             case SHARPEN: return "SHARPEN";
+
+            case EMBOSS: return "EMBOSS";
 
             default: return "UNKNOWN_EFFECT";
         }
@@ -89,6 +92,14 @@ namespace FilterConfig
             filterCoeffs = &FilterConfig::SharpenCoefficients::coefficients;
             filterFactor = &FilterConfig::SharpenCoefficients::factor;
             filterBias = &FilterConfig::SharpenCoefficients::bias;
+        }
+        else if(effect == EMBOSS)
+        {
+            width = &FilterConfig::EmbossCoefficients::coefficientsWidth;
+            height = &FilterConfig::EmbossCoefficients::coefficientsHeight;
+            filterCoeffs = &FilterConfig::EmbossCoefficients::coefficients;
+            filterFactor = &FilterConfig::EmbossCoefficients::factor;
+            filterBias = &FilterConfig::EmbossCoefficients::bias;
         }
     }
 }

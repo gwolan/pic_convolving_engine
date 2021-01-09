@@ -21,7 +21,12 @@ ArgParser::ArgParser(uint32_t argc, char* argv[])
                                                                    "- tga\n")
         ("effect,e", boost::program_options::value<std::string>()->default_value("BLUR"), "requested effect (optional)\n\n"
                                                                                           "Supported effects:\n"
-                                                                                          "- BLUR (default)");
+                                                                                          "- BLUR (default)"
+                                                                                          "- MOTION_BLUR"
+                                                                                          "- EDGE_DETECTION"
+                                                                                          "- SHARPEN"
+                                                                                          "- EMBOSS"
+                                                                                          "- EMBOSS");
 
     parseArgs(argc, argv);
 }
