@@ -14,8 +14,8 @@ class Filter
 
     private:
     const FilterConfig::FilterEffect _effectType;
-    const uint32_t* _coefficientsWidth;
-    const uint32_t* _coefficientsHeight;
+    const int32_t* _coefficientsWidth;
+    const int32_t* _coefficientsHeight;
     const double* _bias;
     const double* _factor;
     const std::vector<std::vector<double>>* _coefficients;

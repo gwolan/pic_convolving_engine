@@ -16,7 +16,7 @@ class Image
     bool saveImage();
     void setPixels(uint8_t* newPixels);
     uint8_t* getPixels();
-    uint32_t getSize();
+    int32_t getSize();
     int32_t getChannels();
     int32_t getWidth();
     int32_t getHeight();

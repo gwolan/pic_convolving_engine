@@ -1,4 +1,3 @@
-#include <iostream>
 #include <STBlib/STB.hpp>
 #include <ImageProcessing/Image.hpp>
 
@@ -12,7 +11,7 @@ Image::Image(const std::string& path, FilterConfig::FileFormat format)
     , _jpgQuality(100)
     , _pixels(NULL)
     , _isImageLoaded(false)
-{ 
+{
     _isImageLoaded = loadImage();
 }
 
@@ -90,9 +89,9 @@ uint8_t* Image::getPixels()
     return _pixels;
 }
 
-uint32_t Image::getSize()
+int32_t Image::getSize()
 {
-    return static_cast<uint32_t>(_height * _width * _channels);
+    return _height * _width * _channels;
 }
 
 int32_t Image::getChannels()

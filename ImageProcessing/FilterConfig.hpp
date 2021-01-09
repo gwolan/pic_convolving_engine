@@ -8,20 +8,20 @@ namespace FilterConfig
 {
     namespace BlurCoefficients
     {
-        constexpr uint32_t coefficientsWidth = 3;
-        constexpr uint32_t coefficientsHeight = 3;
+        constexpr int32_t coefficientsWidth = 3;
+        constexpr int32_t coefficientsHeight = 3;
 
         constexpr double bias = 0.0;
-        constexpr double factor = 1.0;
-        const std::vector<std::vector<double>> coefficients = { { 0.0, 0.2, 0.0 },
-                                                                { 0.2, 0.2, 0.2 },
-                                                                { 0.0, 0.2, 0.0 } };
+        constexpr double factor = 1.0 / 4.5;
+        const std::vector<std::vector<double>> coefficients = { { 0.1, 0.2, 0.3 },
+                                                                { 0.4, 0.5, 0.6 },
+                                                                { 0.7, 0.8, 0.9 } };
     }
 
     namespace MotionBlurCoefficients
     {
-        constexpr uint32_t coefficientsWidth = 3;
-        constexpr uint32_t coefficientsHeight = 3;
+        constexpr int32_t coefficientsWidth = 3;
+        constexpr int32_t coefficientsHeight = 3;
 
         constexpr double bias = 0.0;
         constexpr double factor = 1.0 / 3.0;
@@ -32,8 +32,8 @@ namespace FilterConfig
 
     namespace EdgeDetectionCoefficients
     {
-        constexpr uint32_t coefficientsWidth = 3;
-        constexpr uint32_t coefficientsHeight = 3;
+        constexpr int32_t coefficientsWidth = 3;
+        constexpr int32_t coefficientsHeight = 3;
 
         constexpr double bias = 0.0;
         constexpr double factor = 1.0;
@@ -44,8 +44,8 @@ namespace FilterConfig
 
     namespace SharpenCoefficients
     {
-        constexpr uint32_t coefficientsWidth = 3;
-        constexpr uint32_t coefficientsHeight = 3;
+        constexpr int32_t coefficientsWidth = 3;
+        constexpr int32_t coefficientsHeight = 3;
 
         constexpr double bias = 0.0;
         constexpr double factor = 1.0;
