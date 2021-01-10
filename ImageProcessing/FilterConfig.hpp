@@ -8,6 +8,7 @@ namespace FilterConfig
 {
     namespace BlurCoefficients
     {
+        constexpr bool grayScaleRequired = false;
         constexpr int32_t coefficientsWidth = 7;
         constexpr int32_t coefficientsHeight = 7;
 
@@ -24,6 +25,7 @@ namespace FilterConfig
 
     namespace MotionBlurCoefficients
     {
+        constexpr bool grayScaleRequired = false;
         constexpr int32_t coefficientsWidth = 7;
         constexpr int32_t coefficientsHeight = 7;
 
@@ -40,6 +42,7 @@ namespace FilterConfig
 
     namespace EdgeDetectionCoefficients
     {
+        constexpr bool grayScaleRequired = true;
         constexpr int32_t coefficientsWidth = 5;
         constexpr int32_t coefficientsHeight = 5;
 
@@ -54,6 +57,7 @@ namespace FilterConfig
 
     namespace SharpenCoefficients
     {
+        constexpr bool grayScaleRequired = false;
         constexpr int32_t coefficientsWidth = 3;
         constexpr int32_t coefficientsHeight = 3;
 
@@ -66,6 +70,7 @@ namespace FilterConfig
 
     namespace EmbossCoefficients
     {
+        constexpr bool grayScaleRequired = true;
         constexpr int32_t coefficientsWidth = 5;
         constexpr int32_t coefficientsHeight = 5;
 
@@ -105,5 +110,5 @@ namespace FilterConfig
 
     void getFilterConfig(FilterEffect effect, const int32_t*& width,
                                               const int32_t*& height, const double*& filterBias,
-                                                                      const double*& filterFactor, const std::vector<std::vector<double>>*& filterCoeffs);
+                                                                      const double*& filterFactor, const bool *& grayScale, const std::vector<std::vector<double>>*& filterCoeffs);
 }

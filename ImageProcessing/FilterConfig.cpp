@@ -59,10 +59,11 @@ namespace FilterConfig
 
     void getFilterConfig(FilterEffect effect, const int32_t*& width,
                                               const int32_t*& height, const double*& filterBias,
-                                                                      const double*& filterFactor, const std::vector<std::vector<double>>*& filterCoeffs)
+                                                                      const double*& filterFactor, const bool *& grayScale, const std::vector<std::vector<double>>*& filterCoeffs)
     {
         if(effect == BLUR)
         {
+            grayScale = &FilterConfig::BlurCoefficients::grayScaleRequired;
             width = &FilterConfig::BlurCoefficients::coefficientsWidth;
             height = &FilterConfig::BlurCoefficients::coefficientsHeight;
             filterCoeffs = &FilterConfig::BlurCoefficients::coefficients;
@@ -71,6 +72,7 @@ namespace FilterConfig
         }
         else if(effect == MOTION_BLUR)
         {
+            grayScale = &FilterConfig::MotionBlurCoefficients::grayScaleRequired;
             width = &FilterConfig::MotionBlurCoefficients::coefficientsWidth;
             height = &FilterConfig::MotionBlurCoefficients::coefficientsHeight;
             filterCoeffs = &FilterConfig::MotionBlurCoefficients::coefficients;
@@ -79,6 +81,7 @@ namespace FilterConfig
         }
         else if(effect == EDGE_DETECTION)
         {
+            grayScale = &FilterConfig::EdgeDetectionCoefficients::grayScaleRequired;
             width = &FilterConfig::EdgeDetectionCoefficients::coefficientsWidth;
             height = &FilterConfig::EdgeDetectionCoefficients::coefficientsHeight;
             filterCoeffs = &FilterConfig::EdgeDetectionCoefficients::coefficients;
@@ -87,6 +90,7 @@ namespace FilterConfig
         }
         else if(effect == SHARPEN)
         {
+            grayScale = &FilterConfig::SharpenCoefficients::grayScaleRequired;
             width = &FilterConfig::SharpenCoefficients::coefficientsWidth;
             height = &FilterConfig::SharpenCoefficients::coefficientsHeight;
             filterCoeffs = &FilterConfig::SharpenCoefficients::coefficients;
@@ -95,6 +99,7 @@ namespace FilterConfig
         }
         else if(effect == EMBOSS)
         {
+            grayScale = &FilterConfig::EmbossCoefficients::grayScaleRequired;
             width = &FilterConfig::EmbossCoefficients::coefficientsWidth;
             height = &FilterConfig::EmbossCoefficients::coefficientsHeight;
             filterCoeffs = &FilterConfig::EmbossCoefficients::coefficients;
