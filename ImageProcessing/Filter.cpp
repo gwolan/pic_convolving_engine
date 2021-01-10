@@ -31,7 +31,6 @@ void Filter::convolve(Image& inputImage)
             double r = 0.0;
             double g = 0.0;
             double b = 0.0;
-            // double a = 0.0;
 
             for(int32_t coeffY = 0; coeffY < *_coefficientsHeight; ++coeffY)
             {
@@ -40,7 +39,6 @@ void Filter::convolve(Image& inputImage)
                     int32_t xOffset = (pixelX - (*_coefficientsWidth / 2) * channels + coeffX * channels + width * channels) % (width * channels);
                     int32_t yOffset = ((pixelY - *_coefficientsHeight / 2 + coeffY + height) * width * channels) % (width * height * channels);
 
-                    // for(int32_t channel = 0; channel < channels; ++channel)
                     for(int32_t channel = 0; channel < rgbDelimiter; ++channel)
                     {
                         if(channel == 0)
@@ -49,13 +47,10 @@ void Filter::convolve(Image& inputImage)
                             g += inputImage.getPixels()[yOffset + xOffset + channel] * (*_coefficients)[coeffY][coeffX];
                         else if(channel == 2)
                             b += inputImage.getPixels()[yOffset + xOffset + channel] * (*_coefficients)[coeffY][coeffX];
-                        // else if(channel == 3)
-                        //     a += inputImage.getPixels()[yOffset + xOffset + channel] * (*_coefficients)[coeffY][coeffX];
                     }
                 }
             }
 
-            // for(int32_t channel = 0; channel < channels; ++channel)
             for(int32_t channel = 0; channel < rgbDelimiter; ++channel)
             {
                 if(channel == 0)
@@ -64,8 +59,6 @@ void Filter::convolve(Image& inputImage)
                     resultPixels[pixelY * width * channels + pixelX + channel] = std::min(std::max(static_cast<int32_t>(*_factor * g + *_bias), static_cast<int32_t>(0)), static_cast<int32_t>(255));
                 else if(channel == 2)
                     resultPixels[pixelY * width * channels + pixelX + channel] = std::min(std::max(static_cast<int32_t>(*_factor * b + *_bias), static_cast<int32_t>(0)), static_cast<int32_t>(255));
-                // else if(channel == 3)
-                //     resultPixels[pixelY * width * channels + pixelX + channel] = std::min(std::max(static_cast<int32_t>(*_factor * a + *_bias), static_cast<int32_t>(0)), static_cast<int32_t>(255));
             }
         }
     }
