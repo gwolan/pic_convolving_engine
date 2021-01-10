@@ -25,7 +25,7 @@ ArgParser::ArgParser(uint32_t argc, char* argv[])
                                                                                           "- MOTION_BLUR\n"
                                                                                           "- EDGE_DETECTION\n"
                                                                                           "- SHARPEN\n"
-                                                                                          "- EMBOSS");
+                                                                                          "- EMBOSS\n");
 
     parseArgs(argc, argv);
 }
