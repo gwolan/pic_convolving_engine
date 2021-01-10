@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.6)
 project (pic_convolving_engine CXX)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS "-O2 -Wall")
+set(CMAKE_CXX_FLAGS "-O2 -Wall -Wno-psabi")
 
 
 
