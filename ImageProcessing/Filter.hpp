@@ -20,4 +20,5 @@ class Filter
     const double* _bias;
     const double* _factor;
     const std::vector<std::vector<double>>* _coefficients;
+    const FilterConfig::FilterEffect _effect;
 };
