@@ -29,7 +29,7 @@ void Filter::convolve(Image& inputImage)
     // TESTING
     Timer timer;
     std::ofstream file;
-    uint32_t iterations = 20;
+    uint32_t iterations = 100;
     double result = 0.0;
 
     file.open("wyniki.txt", std::ofstream::app);
